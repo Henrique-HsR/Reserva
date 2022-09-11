@@ -1,0 +1,204 @@
+@charset 'UTF-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+:root {
+    --bg: #201b2c;
+    --cor1: #77ffc0;
+    --cor2: #8880fe;
+    --cor3: #00ff88;
+    --cor4: #9a7ee6;
+    --cor5: #f0ffffde;
+    --cor6: #f0ffff94;
+    --cor7: #2b134b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--cor4);
+    font-weight: 500;
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+main {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1 {
+    color: var(--cor2);
+    font-size: 3em;
+    margin-bottom: 3rem;
+}
+
+main div.social-media {
+    display: flex;
+    align-content: center;
+
+}
+
+div.social-media  a {
+    text-decoration: none;
+}
+
+div.social-media  img {
+    width: 36px;
+    margin-left: 3rem;
+}
+
+div.social-media a:first-child {
+    margin-left: 0;
+}
+
+main div.alternative {
+    margin-top: 1rem;
+}
+
+main div.alternative span {
+    font-size: 1,1rem;
+    font-weight: 400;
+    color: var(--cor4);
+    position: relative;
+}
+
+main div.alternative span::before, main div.alternative span::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 100px;
+    background: var(--cor4);
+    bottom: 50%;
+    right: 50px;
+}
+
+main div.alternative span::after {
+    left: 50px;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main form label {
+    display: flex;
+    flex-direction: column;
+}
+
+main form label span {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+
+main form input {
+    background: var(--cor7);
+    width: 300px;
+    height: 50px;
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+    outline: none;
+    color: var(--cor5);
+    font-size: 1rem;
+    border: 1px solid #040b18;
+    border-radius: 8px;
+}
+
+main form input[type="submit"] {
+    cursor: pointer;
+    width: 50%;
+    margin-top: 3rem;
+    border: none;
+    border-radius: 32px;
+    background: var(--cor2);
+    color: var(--cor3);
+    font-size: 1.1rem;
+}
+
+main form input[type="submit"]:hover {
+    background: #948cff;
+    color: #60ffb5;
+}
+
+main span {
+    margin-top: 0.8rem;
+}
+
+main span a {
+    text-decoration: none;
+    color: var(--cor4);
+}
+
+main span a:hover {
+    text-decoration: underline;
+}
+
+section.images{
+    width: 50vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 4rem;
+}
+
+section.images img {
+    max-width: 100%;
+}
+
+section.images .circle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #e8cbc0, #636fa4);
+    clip-path: circle(40% at right 80%);
+    z-index: -1;
+}
+
+@media only screen and (min-width:900px) and (max-width: 1200px) {
+    section.images img {
+        width: 110%;
+    }
+
+    section.images .circle {
+        clip-path: circle(35% at right 80%);
+    }
+}
+
+@media only screen and (max-width:900px) {
+    main{
+        width: 100vw;
+    }
+    section.images {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    main h1 {
+        font-size: 2rem;
+    }
+
+    main .alternative span {
+        font-size: 0.8rem;
+    }
+
+    main form label span, main form input[type="submit"]{
+        font-size: 1rem;
+    }
+}
