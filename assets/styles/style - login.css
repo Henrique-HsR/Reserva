@@ -22,7 +22,12 @@
 body {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
+    font-size: 1rem;
     background-color: white;
+}
+
+h1 {
+    font-size: 1.4rem;
 }
 
 img {
@@ -60,7 +65,7 @@ img {
 }
 
 .card-login > h1 {
-    color: var(--cor1);
+    color: var(--cor5);
     font-weight: 800;
     margin: 0;
 }
@@ -80,8 +85,8 @@ img {
     border-radius: 10px;
     padding: 15px;
     background: var(--cor4);
-    color: var(--cor7);
-    font-size: 12pt;
+    color: var(--cor1);
+    font-size: 1rem;
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.350);
     outline: none;
     box-sizing: border-box;
@@ -94,6 +99,7 @@ img {
 .textfield > label {
     color: var(--cor5);
     margin-bottom: 10px;
+    font-size: 1.1rem;
 }
 
 .card-login span {
@@ -112,6 +118,7 @@ img {
 
 .btn-login {
     width: 100%;
+    max-width: 260px;
     padding: 16px 0px;
     margin: 25px;
     border: none;
@@ -123,11 +130,12 @@ img {
     color: var(--cor3);
     background: var(--cor1);
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00ff0052;
+    box-shadow: 0px 10px 40px -12px rgba(0, 255, 0, 0.260);
 }
 
 .btn-login:hover {
     background: var(--cor5);
+    box-shadow: 0px 10px 40px -12px rgb(5, 10, 97);
 }
 
 @media only screen and (max-width:650px){
