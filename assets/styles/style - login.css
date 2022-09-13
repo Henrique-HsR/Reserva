@@ -3,14 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
 :root {
-    --bg: #201b2c;
-    --cor1: #77ffc0;
-    --cor2: #2f2841;
-    --cor3: #00ff88;
-    --cor4: #514869;
-    --cor5: #f0ffffde;
-    --cor6: #f0ffff94;
-    --cor7: #2b134b;
+    --cor1: #004d00;
+    --cor2: #85ff85;
+    --cor3: #ebffeb;
+    --cor4: #f5f5f5;
+    --cor5: #050a61;
+    --cor6: #00000005;
+    --cor7: #00000070;
 }
 
 * {
@@ -48,8 +47,8 @@ img {
 }
 
 .card-login {
-    width: 600px;
-    max-width: 80%;
+    width: 100%;
+    max-width: 420px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +60,7 @@ img {
 }
 
 .card-login > h1 {
-    color: var(--cor2);
+    color: var(--cor1);
     font-weight: 800;
     margin: 0;
 }
@@ -80,8 +79,8 @@ img {
     border: none;
     border-radius: 10px;
     padding: 15px;
-    background: var(--cor5);
-    color: var(--cor2);
+    background: var(--cor4);
+    color: var(--cor7);
     font-size: 12pt;
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.350);
     outline: none;
@@ -89,21 +88,21 @@ img {
 }
 
 .textfield > input::placeholder {
-    color: var(--cor4);
+    color: var(--cor7);
 }
 
 .textfield > label {
-    color: var(--cor2);
+    color: var(--cor5);
     margin-bottom: 10px;
 }
 
 .card-login span {
-    color: var(--cor4);
+    color: var(--cor3);
 }
 
 .card-login span > a {
     text-decoration: none;
-    color: var(--cor4);
+    color: var(--cor5);
 }
 
 .card-login span > a:hover {
@@ -121,24 +120,14 @@ img {
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
-    color: var(--cor2);
+    color: var(--cor3);
     background: var(--cor1);
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00ff0052;
 }
 
 .btn-login:hover {
-    background: var(--cor3);
-}
-
-@media only screen and (max-width:920px){
-    .login{
-        width: 500px;
-    }
-
-    .card-login{
-        width: 100%;
-    }
+    background: var(--cor5);
 }
 
 @media only screen and (max-width:650px){
@@ -147,7 +136,8 @@ img {
     }
 
     .login{
-        width: 400px;
+        width: 80%;
+        max-width: 420px;
     }
 
     .card-login {
@@ -155,8 +145,9 @@ img {
     }
 }
 
-@media only screen and (max-width:450px){
+@media only screen and (max-width:420px){
     .login {
-        width: 360px;
+        width: 80%;
+        max-width: 360px;
     }
 }
