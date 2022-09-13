@@ -22,8 +22,8 @@
 html, body {
     width: 100vw;
     height: 100vh;
-    background-color: white);
-    color: var(--cor5);
+    background-color: white;
+    color: var(--cor1);
 }
 
 header {
@@ -63,7 +63,7 @@ a {
 
 .menu li:hover, li > a:hover {
     background-color: #004d0044;
-    color: var(--cor3);
+    color: white;
     border-radius: 8px;
 }
 
@@ -117,12 +117,28 @@ div.itens img {
 
 div.itens:hover{
     background-color: var(--cor3);
+    box-shadow: 0px 6px 30px -10px rgba(0, 0, 0, 0.26);
 }
 
 footer {
+    display: flex;
     width: 100%;
-    height: 20%;
-    background-color: var(--cor3);
+    height: 10%;
+    background-color: #004d006c;
+    color: #ebffeb;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+footer p {
+    font-size: 1rem;
+    color: white;
+}
+
+footer img {
+    width: 48px;
 }
 
 @media screen and (min-width: 368px) {
