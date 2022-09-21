@@ -1,32 +1,32 @@
-function validateFields() {
-    const loginValid = isLoginValid();
-    document.getElementById("forgot-pass").disabled = !loginValid;
-
-    const passwordValid = isPasswordValid();
-    document.getElementById("btn-login").disabled = !loginValid || !passwordValid;
-    
-
-
-    function isLoginValid () {
-        const login = document.getElementById('ilogin').value;
-
-        if (!login) {
-            return false;
-        }
-
-        return true;
-    }
-
-    function isPasswordValid () {
-        const password = document.getElementById('isenha').value;
-
-        if (!password) {
-            return false;
-        }
-
-        return true;
-    }
+function onChangeLogin() {
+    toggleButtonsDisabled();
+    toggleLoginErros();
 }
+
+function onChangePassword() {
+    toggleButtonsDisabled();
+    togglePasswordErros();
+}
+
+
+function isLoginValid () {
+    const login = document.getElementById('ilogin').value;
+
+    if (!login) {
+        return false;
+    }
+
+    return true;
+}
+
+function isPasswordValid () {
+    const password = document.getElementById('isenha').value;
+    if (!password) {
+        return false;
+    }
+    return true;
+}
+
 
 function logar() {
     var login = document.getElementById('ilogin').value;
@@ -41,4 +41,31 @@ function logar() {
 
 function forgotPass() {
     location.href = "./assets/Pages/cadastro.html";
+}
+
+function toggleLoginErros () {
+    const login = document.getElementById('ilogin').value;
+    
+    if (!login) {
+        document.getElementById('login-error').style.display = "block";
+    } else {
+        document.getElementById('login-error').style.display = "none";
+    }
+}
+
+function togglePasswordErros() {
+    const password = document.getElementById('isenha').value;
+    if (!password) {
+        document.getElementById('password-error').style.display = "block";
+    } else {
+        document.getElementById('password-error').style.display = "none";
+    }
+}
+
+function toggleButtonsDisabled () {
+    const loginValid = isLoginValid();
+    document.getElementById("forgot-pass").disabled = !loginValid;
+
+    const passwordValid = isPasswordValid();
+    document.getElementById("btn-login").disabled = !loginValid || !passwordValid;
 }

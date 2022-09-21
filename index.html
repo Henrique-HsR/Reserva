@@ -15,14 +15,14 @@
                     <h1>LOGIN</h1>
                     <div class="textfield">
                         <label for="usuario">Usuário</label>
-                        <input type="text" id="ilogin" name="usuario" placeholder="Usuário" onchange="validateFields()">
-                        <div class="error">Login é obrigatório</div>
+                        <input type="text" id="ilogin" name="usuario" placeholder="Usuário" onchange="onChangeLogin()">
+                        <div id="login-error" class="error">Login é obrigatório</div>
                     </div>
                     
                     <div class="textfield">
                         <label for="senha">Senha</label>
-                        <input type="password" id="isenha" name="senha" placeholder="Senha" onchange="validateFields()">
-                        <div class="error">Senha é obrigatória</div>
+                        <input type="password" id="isenha" name="senha" placeholder="Senha" onchange="onChangePassword()">
+                        <div id="password-error" class="error">Senha é obrigatória</div>
                     </div>
                         <input class="btn-login" id="btn-login" type="submit" value="Login" disabled="true" onclick="logar()">
                         
