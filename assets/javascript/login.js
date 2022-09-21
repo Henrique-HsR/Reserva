@@ -10,7 +10,7 @@ function onChangePassword() {
 
 
 function isLoginValid () {
-    const login = document.getElementById('ilogin').value;
+    const login = form.login().value;
 
     if (!login) {
         return false;
@@ -20,7 +20,7 @@ function isLoginValid () {
 }
 
 function isPasswordValid () {
-    const password = document.getElementById('isenha').value;
+    const password = form.password().value;
     if (!password) {
         return false;
     }
@@ -29,8 +29,8 @@ function isPasswordValid () {
 
 
 function logar() {
-    var login = document.getElementById('ilogin').value;
-    var senha = document.getElementById('isenha').value;
+    var login = form.login().value;
+    var senha = form.password().value;
 
     if (login == "admin" && senha == "admin") {
         location.href = "./assets/Pages/standard.html";
@@ -44,28 +44,28 @@ function forgotPass() {
 }
 
 function toggleLoginErros () {
-    const login = document.getElementById('ilogin').value;
-    
-    if (!login) {
-        document.getElementById('login-error').style.display = "block";
-    } else {
-        document.getElementById('login-error').style.display = "none";
-    }
+    const login = form.login().value;
+    form.loginRequiredError().style.display = login ? "none" : "block";
 }
 
 function togglePasswordErros() {
     const password = document.getElementById('isenha').value;
-    if (!password) {
-        document.getElementById('password-error').style.display = "block";
-    } else {
-        document.getElementById('password-error').style.display = "none";
-    }
+    form.passwordRequiredError().style.display = password ? "none" : "block";
 }
 
 function toggleButtonsDisabled () {
     const loginValid = isLoginValid();
-    document.getElementById("forgot-pass").disabled = !loginValid;
+    form.forgotPassword().disabled = !loginValid;
 
     const passwordValid = isPasswordValid();
-    document.getElementById("btn-login").disabled = !loginValid || !passwordValid;
+    form.loginButton().disabled = !loginValid || !passwordValid;
+}
+
+const form = {
+    login: () => document.getElementById('ilogin'),
+    loginRequiredError: () => document.getElementById('login-error'),
+    loginButton: () => document.getElementById('btn-login'),
+    password: () => document.getElementById('isenha'),
+    passwordRequiredError: () => document.getElementById('password-error'),
+    forgotPassword: () => document.getElementById('forgot-pass')
 }
