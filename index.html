@@ -15,29 +15,22 @@
                     <h1>LOGIN</h1>
                     <div class="textfield">
                         <label for="usuario">Usuário</label>
-                        <input type="text" id="ilogin" name="usuario" placeholder="Usuário">
+                        <input type="text" id="ilogin" name="usuario" placeholder="Usuário" onchange="validateFields()">
+                        <div class="error">Login é obrigatório</div>
                     </div>
+                    
                     <div class="textfield">
                         <label for="senha">Senha</label>
-                        <input type="password" id="isenha" name="senha" placeholder="Senha">
+                        <input type="password" id="isenha" name="senha" placeholder="Senha" onchange="validateFields()">
+                        <div class="error">Senha é obrigatória</div>
                     </div>
-                        <input class="btn-login" type="submit" value="Login" disabled="true" onclick="logar()">
-                        <input id="forgot-pass" type="button" value="Recuperar senha" class="btn-forgot">
+                        <input class="btn-login" id="btn-login" type="submit" value="Login" disabled="true" onclick="logar()">
+                        
+                        <input id="forgot-pass" type="button" value="Recuperar senha"
+                        disabled="true" class="btn-forgot" onclick="forgotPass()">
                 </div>
             </section>
         </main>
-
-        <script>
-            function logar() {
-                var login = document.getElementById('ilogin').value;
-                var senha = document.getElementById('isenha').value;
-
-                if (login == "admin" && senha == "admin") {
-                    location.href = "./assets/Pages/standard.html";
-                } else {
-                    alert('Usuário ou senha incorretos')
-                }
-            }
-        </script>
+        <script src="assets/javascript/login.js"></script>
     </body>
 </html>

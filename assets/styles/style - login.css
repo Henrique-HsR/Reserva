@@ -102,6 +102,13 @@ img {
     font-size: 1.1rem;
 }
 
+.error {
+    display: none;
+    margin: 5px auto 0px auto;
+    background-color: red;
+    color: white;
+}
+
 .card-login span {
     color: var(--cor3);
 }
@@ -116,7 +123,7 @@ img {
     text-decoration: underline;
 }
 
-.btn-login {
+.btn-login{
     width: 100%;
     max-width: 260px;
     padding: 16px 0px;
@@ -133,10 +140,27 @@ img {
     box-shadow: 0px 10px 40px -12px rgba(0, 255, 0, 0.260);
 }
 
-.btn-login:hover {
-    background: var(--cor5);
-    box-shadow: 0px 10px 40px -12px rgb(5, 10, 97);
+.btn-forgot {
+    width: 100%;
+    max-width: 220px;
+    margin: 25px;
+    border: none;
+    outline: none;
+    background: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--cor5);
+    cursor: pointer;
 }
+
+.btn-forgot[disabled], .btn-login[disabled] {
+    opacity: 0.5;
+}
+.btn-forgot[disabled = "false"], .btn-login[disabled = "false"]{
+    opacity: 1;
+}
+
+
 
 @media only screen and (max-width:650px){
     .main-login{
