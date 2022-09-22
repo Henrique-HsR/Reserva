@@ -1,3 +1,12 @@
+const form = {
+    login: () => document.getElementById('ilogin'),
+    loginRequiredError: () => document.getElementById('login-error'),
+    loginButton: () => document.getElementById('btn-login'),
+    password: () => document.getElementById('isenha'),
+    passwordRequiredError: () => document.getElementById('password-error'),
+    forgotPassword: () => document.getElementById('forgot-pass')
+}
+
 function onChangeLogin() {
     toggleButtonsDisabled();
     toggleLoginErros();
@@ -7,7 +16,6 @@ function onChangePassword() {
     toggleButtonsDisabled();
     togglePasswordErros();
 }
-
 
 function isLoginValid () {
     const login = form.login().value;
@@ -25,18 +33,6 @@ function isPasswordValid () {
         return false;
     }
     return true;
-}
-
-
-function logar() {
-    var login = form.login().value;
-    var senha = form.password().value;
-
-    if (login == "admin" && senha == "admin") {
-        location.href = "./assets/Pages/standard.html";
-    } else {
-        alert('Usuário ou senha incorretos')
-    }
 }
 
 function forgotPass() {
@@ -61,11 +57,13 @@ function toggleButtonsDisabled () {
     form.loginButton().disabled = !loginValid || !passwordValid;
 }
 
-const form = {
-    login: () => document.getElementById('ilogin'),
-    loginRequiredError: () => document.getElementById('login-error'),
-    loginButton: () => document.getElementById('btn-login'),
-    password: () => document.getElementById('isenha'),
-    passwordRequiredError: () => document.getElementById('password-error'),
-    forgotPassword: () => document.getElementById('forgot-pass')
+function logar() {
+    var login = form.login().value;
+    var senha = form.password().value;
+
+    if (login == "admin" && senha == "admin") {
+        location.href = "./assets/Pages/standard.html";
+    } else {
+        alert('Usuário ou senha incorretos')
+    }
 }
