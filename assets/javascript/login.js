@@ -13,8 +13,10 @@ function logar() {
         });
     } else {
         firebase.auth().signInWithEmailAndPassword(form.login().value, form.password().value).then(response => {
+            hideLoading();
             window.location.href = "./assets/pages/home-morador.html";
         }).catch(error => {
+            hideLoading();
             alert(getErrorMessage(error));
         });
     }
