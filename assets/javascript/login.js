@@ -1,69 +1,41 @@
-const form = {
-    login: () => document.getElementById('ilogin'),
-    loginRequiredError: () => document.getElementById('login-error'),
-    loginButton: () => document.getElementById('btn-login'),
-    password: () => document.getElementById('isenha'),
-    passwordRequiredError: () => document.getElementById('password-error'),
-    forgotPassword: () => document.getElementById('forgot-pass')
-}
-
-function onChangeLogin() {
-    toggleButtonsDisabled();
-    toggleLoginErros();
-}
-
-function onChangePassword() {
-    toggleButtonsDisabled();
-    togglePasswordErros();
-}
-
-function isLoginValid () {
-    const login = form.login().value;
-
-    if (!login) {
-        return false;
-    }
-
-    return true;
-}
-
-function isPasswordValid () {
-    const password = form.password().value;
-    if (!password) {
-        return false;
-    }
-    return true;
-}
-
-function forgotPass() {
-    location.href = "./assets/Pages/cadastro.html";
-}
-
-function toggleLoginErros () {
-    const login = form.login().value;
-    form.loginRequiredError().style.display = login ? "none" : "block";
-}
-
-function togglePasswordErros() {
-    const password = document.getElementById('isenha').value;
-    form.passwordRequiredError().style.display = password ? "none" : "block";
-}
-
-function toggleButtonsDisabled () {
-    const loginValid = isLoginValid();
-    form.forgotPassword().disabled = !loginValid;
-
-    const passwordValid = isPasswordValid();
-    form.loginButton().disabled = !loginValid || !passwordValid;
-}
-
 function logar() {
-    var login = form.login().value;
+    const login = form.login().value;
+    const senha = form.password().value;
+    showLoading();
+    
+    if(login == "adm@1.adm" && senha == "adminreserva") {
+        firebase.auth().signInWithEmailAndPassword(form.login().value, form.password().value).then(response => {
+            hideLoading();
+            window.location.href = "./assets/pages/home-admin.html";
+        }).catch(error => {
+            hideLoading();
+            alert(getErrorMessage(error));
+        });
+    } else {
+        firebase.auth().signInWithEmailAndPassword(form.login().value, form.password().value).then(response => {
+            window.location.href = "./assets/pages/home-morador.html";
+        }).catch(error => {
+            alert(getErrorMessage(error));
+        });
+    }
+}
+
+function getErrorMessage(error) {
+    if (error.code == "auth/user-not-found") {
+        return "Usuário não encontrado";
+    } else if (error.code == "auth/wrong-password") {
+        return "Senha incorreta";
+    }
+    return error.message;
+}
+
+    /*firebase.auth().signInWithEmailAndPassword(form.login().value, form.password().value)*/
+
+    /*var login = form.login().value;
     var senha = form.password().value;
 
     if (login == "admin" && senha == "admin") {
         location.href = "./assets/Pages/standard.html";
     } else {
         alert('Usuário ou senha incorretos')
-    }
-}
+    }*/

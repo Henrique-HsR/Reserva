@@ -11,14 +11,17 @@
         <main class="main-login">
             <section class="login">
                 <div class="card-login">
-                    <img src="assets/Imgs/logo-reserva.png" alt="Reserva">
+                    <img src="assets/images/logo-reserva.png" alt="Reserva">
                     <h1>LOGIN</h1>
                     <div class="textfield">
                         <label for="usuario">Usuário</label>
                         <input type="text" id="ilogin" name="usuario" placeholder="Usuário" onchange="onChangeLogin()">
                         <div id="login-error" class="error">Login é obrigatório</div>
+                        <div id="login-invalid-error" class="error">Login inválido</div>
                     </div>
-                    
+                    <div id="loading" class="loading">
+                        <label>Carregando...</label>
+                    </div>
                     <div class="textfield">
                         <label for="senha">Senha</label>
                         <input type="password" id="isenha" name="senha" placeholder="Senha" onchange="onChangePassword()">
@@ -31,6 +34,24 @@
                 </div>
             </section>
         </main>
+    
         <script src="assets/javascript/login.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+        <script>
+            const firebaseConfig = {
+            apiKey: "AIzaSyAwEojprnzWt6-5GWdbbgTQUjEXG3jWK0k",
+            authDomain: "reserva-da-paz.firebaseapp.com",
+            projectId: "reserva-da-paz",
+            storageBucket: "reserva-da-paz.appspot.com",
+            messagingSenderId: "470966311146",
+            appId: "1:470966311146:web:deaa7788d479c528091f93"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src="assets/javascript/validations.js"></script>
+        <script src="assets/javascript/loading.js"></script>
+        <script src="assets/javascript/index.js"></script>
     </body>
 </html>
