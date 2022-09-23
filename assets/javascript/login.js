@@ -28,14 +28,3 @@ function getErrorMessage(error) {
     }
     return error.message;
 }
-
-    /*firebase.auth().signInWithEmailAndPassword(form.login().value, form.password().value)*/
-
-    /*var login = form.login().value;
-    var senha = form.password().value;
-
-    if (login == "admin" && senha == "admin") {
-        location.href = "./assets/Pages/standard.html";
-    } else {
-        alert('Usuário ou senha incorretos')
-    }*/

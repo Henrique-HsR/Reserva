@@ -4,9 +4,6 @@ function showLoading() {
 }
 
 function hideLoading() {
-    const loadings = document.getElementsByClassName("loading");
-
-    if (loadings.length) {
-        loadings[0].remove();
-    }
+    const loadings = document.getElementById('loading');
+    loadings.style.display = "none";
 }       
