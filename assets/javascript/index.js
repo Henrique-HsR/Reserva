@@ -8,6 +8,12 @@ const form = {
     forgotPassword: () => document.getElementById('forgot-pass')
 }
 
+/*firebase.auth().onAuthStatusChanged(function(user)) {
+    if(user) {
+        
+    }
+}*/
+
 function onChangeLogin() {
     toggleButtonsDisabled();
     toggleLoginErros();
