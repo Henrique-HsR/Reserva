@@ -59,3 +59,14 @@ function toggleButtonsDisabled () {
     const passwordValid = isPasswordValid();
     form.loginButton().disabled = !loginValid || !passwordValid;
 }
+
+function recoverPassword(){
+    showLoading();
+    firebase.auth().sendPasswordResetEmail(form.login().value).then(() => {
+        hideLoading();
+        alert('Email enviado com sucesso');
+    }).catch(error => {
+        hideLoading();
+        alert(getErrorMessage(error));
+    })
+}
