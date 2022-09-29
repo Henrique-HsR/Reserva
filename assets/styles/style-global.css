@@ -68,7 +68,6 @@ a {
 }
 
 /*Main menu*/
-
 h1 {
     font-size: 1.6rem;
     text-align: center;
@@ -77,47 +76,6 @@ h1 {
 
 h2 {
     font-size: 1rem;
-}
-
-.menu-morador {
-    display: flex;
-    flex-wrap: wrap;
-    width: 80vw;
-    max-width: 860px;
-    margin: 0 auto;
-}
-
-.menu-morador > div{
-    flex: 1 1 200px;
-}
-
-div.itens {
-    display: flex;
-    width: 200px;
-    height: 200px;
-    background-color: var(--cor4);
-    border-radius: 10px;
-    margin: 10px;
-    padding: 5px;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-}
-
-div.itens > a {
-    display: block;
-    width: 100%;
-}
-
-div.itens img {
-    width: 70px;
-    max-width: 120px;
-}
-
-div.itens:hover{
-    background-color: var(--cor3);
-    box-shadow: 0px 6px 30px -10px rgba(0, 0, 0, 0.26);
 }
 
 footer {
@@ -129,7 +87,6 @@ footer {
     align-items: center;
     justify-content: center;
     align-content: center;
-    
 }
 
 footer p {

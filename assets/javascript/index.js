@@ -1,18 +1,13 @@
 const form = {
     login: () => document.getElementById('ilogin'),
     loginRequiredError: () => document.getElementById('login-error'),
-    loginInvalidError: () => document.getElementById('login-invalid-error'),
     loginButton: () => document.getElementById('btn-login'),
     password: () => document.getElementById('isenha'),
     passwordRequiredError: () => document.getElementById('password-error'),
     forgotPassword: () => document.getElementById('forgot-pass')
 }
 
-/*firebase.auth().onAuthStatusChanged(function(user)) {
-    if(user) {
-        
-    }
-}*/
+
 
 function onChangeLogin() {
     toggleButtonsDisabled();
@@ -31,7 +26,7 @@ function isLoginValid () {
         return false;
     }
 
-    return validateLogin(login);
+    return true;
 }
 
 function isPasswordValid () {
@@ -49,8 +44,6 @@ function forgotPass() {
 function toggleLoginErros () {
     const login = form.login().value;
     form.loginRequiredError().style.display = login ? "none" : "block";
-
-    form.loginInvalidError().style.display = validateLogin(login) ? "none" : "block";
 }
 
 function togglePasswordErros() {
@@ -64,15 +57,4 @@ function toggleButtonsDisabled () {
 
     const passwordValid = isPasswordValid();
     form.loginButton().disabled = !loginValid || !passwordValid;
-}
-
-function recoverPassword(){
-    showLoading();
-    firebase.auth().sendPasswordResetEmail(form.login().value).then(() => {
-        hideLoading();
-        alert('Email enviado com sucesso');
-    }).catch(error => {
-        hideLoading();
-        alert(getErrorMessage(error));
-    })
 }

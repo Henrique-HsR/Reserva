@@ -13,20 +13,20 @@
                 <div class="card-login">
                     <img src="assets/images/logo-reserva.png" alt="Reserva">
                     <h1>LOGIN</h1>
-                    <div class="textfield">
-                        <label for="usuario">Usuário</label>
-                        <input type="text" id="ilogin" name="usuario" placeholder="Usuário" onchange="onChangeLogin()">
-                        <div id="login-error" class="error">Login é obrigatório</div>
-                        <div id="login-invalid-error" class="error">Login inválido</div>
-                    </div>
-                    <div id="loading" class="loading">
-                        <label>Carregando...</label>
-                    </div>
-                    <div class="textfield">
-                        <label for="senha">Senha</label>
-                        <input type="password" id="isenha" name="senha" placeholder="Senha" onchange="onChangePassword()">
-                        <div id="password-error" class="error">Senha é obrigatória</div>
-                    </div>
+                        <div class="textfield">
+                            <label for="usuario">Usuário</label>
+                            <input type="text" id="ilogin" name="usuario" placeholder="Usuário" onchange="onChangeLogin()">
+                            <div id="login-error" class="error">Login é obrigatório</div>
+                            <div id="login-invalid-error" class="error">Login inválido</div>
+                        </div>
+                        <div id="loading" class="loading">
+                            <label>Carregando...</label>
+                        </div>
+                        <div class="textfield">
+                            <label for="senha">Senha</label>
+                            <input type="password" id="isenha" name="senha" placeholder="Senha" onchange="onChangePassword()">
+                            <div id="password-error" class="error">Senha é obrigatória</div>
+                        </div>
                         <input class="btn-login" id="btn-login" type="submit" value="Login" disabled="true" onclick="logar()">
                         
                         <input id="forgot-pass" type="button" value="Recuperar senha"
@@ -36,11 +36,8 @@
         </main>
     
         <script src="assets/javascript/login.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
-        <script src="assets/javascript/validations.js"></script>
+        <script src="assets/javascript/users.js"></script>
         <script src="assets/javascript/loading.js"></script>
         <script src="assets/javascript/index.js"></script>
-        <script src="assets/javascript/firebase-init.js"></script>
     </body>
 </html>

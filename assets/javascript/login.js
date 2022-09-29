@@ -3,30 +3,14 @@ function logar() {
     const senha = form.password().value;
     showLoading();
     
-    if(login == "adm@1.adm" && senha == "adminreserva") {
-        firebase.auth().signInWithEmailAndPassword(form.login().value, form.password().value).then(response => {
+    if(login == usersLogin.u1() && senha == usersPassword.u1()) {
             hideLoading();
             window.location.href = "./assets/pages/home-admin.html";
-        }).catch(error => {
-            hideLoading();
-            alert(getErrorMessage(error));
-        });
-    } else {
-        firebase.auth().signInWithEmailAndPassword(form.login().value, form.password().value).then(response => {
+    } else if (login == usersLogin.u2() && senha == usersPassword.u2()) {
             hideLoading();
             window.location.href = "./assets/pages/home-morador.html";
-        }).catch(error => {
-            hideLoading();
-            alert(getErrorMessage(error));
-        });
+    } else {
+        hideLoading();
+        alert("erro!")
     }
-}
-
-function getErrorMessage(error) {
-    if (error.code == "auth/user-not-found") {
-        return "Usuário não encontrado";
-    } else if (error.code == "auth/wrong-password") {
-        return "Senha incorreta";
-    }
-    return error.message;
 }
